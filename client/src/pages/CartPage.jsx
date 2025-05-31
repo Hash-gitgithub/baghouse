@@ -47,7 +47,7 @@ const CartPage = () => {
     //get payment gateway token
     const getToken = async () => {
         try {
-            const { data } = await axios.get("http://localhost:3000/api/v1/product/braintree/token");
+            const { data } = await axios.get("https://baghouse.onrender.com/api/v1/product/braintree/token");
             setClientToken(data?.clientToken);
         } catch (error) {
             console.log(error);
@@ -62,14 +62,14 @@ const CartPage = () => {
         try {
             setLoading(true);
             const { nonce } = await instance.requestPaymentMethod();
-            const { data } = await axios.post("http://localhost:3000/api/v1/product/braintree/payment", {
+            const { data } = await axios.post("https://baghouse.onrender.com/api/v1/product/braintree/payment", {
                 nonce,
                 cart,
             });
             setLoading(false);
             localStorage.removeItem("cart");
             setCart([]);
-            navigate("http://localhost:3000/dashboard/user/orders");
+            navigate("https://baghouse.onrender.com/dashboard/user/orders");
             toast.success("Payment Completed Successfully ");
         } catch (error) {
             console.log(error);
@@ -98,7 +98,7 @@ const CartPage = () => {
                             <div className="row mb-2 p-3 card flex-row">
                                 <div className="col-md-4">
                                     <img
-                                        src={`http://localhost:3000/api/v1/product/product-photo/${p._id}`}
+                                        src={`https://baghouse.onrender.com/api/v1/product/product-photo/${p._id}`}
                                         className="card-img-top"
                                         alt={p.name}
                                         width="100px"
@@ -150,8 +150,8 @@ const CartPage = () => {
                                     <button
                                         className="btn btn-outline-warning"
                                         onClick={() =>
-                                            navigate("http://localhost:3000/login", {
-                                                state: "http://localhost:3000/cart",
+                                            navigate("https://baghouse.onrender.com/login", {
+                                                state: "https://baghouse.onrender.com/cart",
                                             })
                                         }
                                     >

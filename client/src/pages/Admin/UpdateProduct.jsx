@@ -24,7 +24,7 @@ const UpdateProduct = () => {
     const getSingleProduct = async () => {
         try {
             const { data } = await axios.get(
-                `http://localhost:3000/api/v1/product/get-product/${params.slug}`
+                `https://baghouse.onrender.com/api/v1/product/get-product/${params.slug}`
             );
             setName(data.product.name);
             setId(data.product._id);
@@ -45,7 +45,7 @@ const UpdateProduct = () => {
     //get all category
     const getAllCategory = async () => {
         try {
-            const { data } = await axios.get("http://localhost:3000/api/v1/category/get-category");
+            const { data } = await axios.get("https://baghouse.onrender.com/api/v1/category/get-category");
             if (data?.success) {
                 setCategories(data?.category);
             }
@@ -71,14 +71,13 @@ const UpdateProduct = () => {
             photo && productData.append("photo", photo);
             productData.append("category", category);
             const { data } = axios.put(
-                `http://localhost:3000/api/v1/product/update-product/${id}`,
+                `https://baghouse.onrender.com/api/v1/product/update-product/${id}`,
                 productData
             );
             if (data?.success) {
                 toast.error(data?.message);
             } else {
                 toast.success("Product Updated Successfully");
-                // navigate("http://localhost:3000/dashboard/admin/products");
                 navigate("/dashboard/admin/products");
             }
         } catch (error) {
@@ -93,7 +92,7 @@ const UpdateProduct = () => {
             let answer = window.prompt("Are You Sure you want to delete this product ? ");
             if (!answer) return;
             const { data } = await axios.delete(
-                `http://localhost:3000/api/v1/product/delete-product/${id}`
+                `https://baghouse.onrender.com/api/v1/product/delete-product/${id}`
             );
             toast.success("Product Deleted Succfully");
             navigate("/dashboard/admin/products");
@@ -154,7 +153,7 @@ const UpdateProduct = () => {
                                 ) : (
                                     <div className="text-center">
                                         <img
-                                            src={`http://localhost:3000/api/v1/product/product-photo/${id}`}
+                                            src={`https://baghouse.onrender.com/api/v1/product/product-photo/${id}`}
                                             alt="product_photo"
                                             height={"200px"}
                                             className="img img-responsive"

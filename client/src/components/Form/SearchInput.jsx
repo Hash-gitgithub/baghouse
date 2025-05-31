@@ -10,7 +10,7 @@ const SearchInput = () => {
         e.preventDefault();
         try {
             const { data } = await axios.get(
-                `http://localhost:3000/api/v1/product/search/${values.keyword}`
+                `https://baghouse.onrender.com/api/v1/product/search/${values.keyword}`
             );
             setValues({ ...values, results: data });
             navigate("/search");

@@ -20,7 +20,7 @@ const CategoryProduct = () => {
     const getPrductsByCat = async () => {
         try {
             const { data } = await axios.get(
-                `http://localhost:3000/api/v1/product/product-category/${params.slug}`
+                `https://baghouse.onrender.com/api/v1/product/product-category/${params.slug}`
             );
             setProducts(data?.products);
             setCategory(data?.category);
@@ -44,7 +44,7 @@ const CategoryProduct = () => {
                                     key={p._id}
                                 >
                                     <img
-                                        src={`http://localhost:3000/api/v1/product/product-photo/${p._id}`}
+                                        src={`https://baghouse.onrender.com/api/v1/product/product-photo/${p._id}`}
                                         className="card-img-top"
                                         alt={p.name}
                                     />
@@ -74,19 +74,7 @@ const CategoryProduct = () => {
                                 </div>
                             ))}
                         </div>
-                        {/* <div className="m-2 p-3">
-            {products && products.length < total && (
-              <button
-                className="btn btn-warning"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setPage(page + 1);
-                }}
-              >
-                {loading ? "Loading ..." : "Loadmore"}
-              </button>
-            )}
-          </div> */}
+                        
                     </div>
                 </div>
             </div>
