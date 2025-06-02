@@ -150,8 +150,8 @@ const CartPage = () => {
                                     <button
                                         className="btn btn-outline-warning"
                                         onClick={() =>
-                                            navigate("https://baghouse.onrender.com/login", {
-                                                state: "https://baghouse.onrender.com/cart",
+                                            navigate("/login", {
+                                                state: "/cart",
                                             })
                                         }
                                     >
