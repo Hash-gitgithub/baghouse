@@ -66,5 +66,3 @@ function App() {
 }
 
 export default App
-
-//user2 = admin

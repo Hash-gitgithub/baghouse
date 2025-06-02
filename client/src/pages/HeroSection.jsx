@@ -19,7 +19,7 @@ function HeroSection({ myData }) {
             wear, accessories, electronics and many more. We offer Premium Quality, Exclusive Designs, and Sustainable
             products.
           </p>
-          <button className="shop-button">
+          <button className="shop-button" onClick={() => navigate("/product")}>
             SHOP <span className="cart-icon">🛒</span> NOW
           </button>
         </div>
