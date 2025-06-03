@@ -1,33 +1,36 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useNavigate } from "react-router-dom";
 // import { NavLink } from "react-router-dom"
 // import { Button } from '../styles/Button';
 // import { TbShoppingBagHeart } from "react-icons/tb";
 
 function HeroSection({ myData }) {
 
+  const navigate = useNavigate();
+
   return (
     <Wrapper>
       <div className="hero-section">
-      <div className="hero-content">
-        <div className="hero-text">
-          <p className="welcome-text">WELCOME TO</p>
-          <h1 className="hero-title">Bag-House</h1>
-          <p className="hero-description">
-            Whether you're looking for Stylish clothing and accessories for every occasion or High-quality, trendy
-            pieces at affordable prices, we've got you covered. Explore our curated collection of men's wear, women's
-            wear, accessories, electronics and many more. We offer Premium Quality, Exclusive Designs, and Sustainable
-            products.
-          </p>
-          <button className="shop-button" onClick={() => navigate("/product")}>
-            SHOP <span className="cart-icon">🛒</span> NOW
-          </button>
-        </div>
-        <div className="hero-image">
-          <img src="/images/main.png" alt="Online Shopping" className="shopping-illustration" />
+        <div className="hero-content">
+          <div className="hero-text">
+            <p className="welcome-text">WELCOME TO</p>
+            <h1 className="hero-title">Bag-House</h1>
+            <p className="hero-description">
+              Whether you're looking for Stylish clothing and accessories for every occasion or High-quality, trendy
+              pieces at affordable prices, we've got you covered. Explore our curated collection of men's wear, women's
+              wear, accessories, electronics and many more. We offer Premium Quality, Exclusive Designs, and Sustainable
+              products.
+            </p>
+            <button className="shop-button" onClick={() => navigate("/product")}>
+              SHOP <span className="cart-icon">🛒</span> NOW
+            </button>
+          </div>
+          <div className="hero-image">
+            <img src="/images/main.png" alt="Online Shopping" className="shopping-illustration" />
+          </div>
         </div>
       </div>
-    </div>
     </Wrapper>
   )
 }
